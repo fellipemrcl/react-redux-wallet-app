@@ -3,6 +3,8 @@ const INITIAL_STATE = {
   expenses: [],
   editor: false,
   idToEdit: 0,
+  expansesTotal: 0,
+  currentCurrency: 'BRL',
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
