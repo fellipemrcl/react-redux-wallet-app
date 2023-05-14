@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import { fetchApi } from '../redux/actions';
+import { fetchApi, saveExpenses } from '../redux/actions';
 
 class WalletForm extends Component {
+  lastId = 0;
+
   state = {
     value: '',
     description: '',
@@ -20,6 +22,26 @@ class WalletForm extends Component {
   handleChange = ({ target }) => {
     const { name, value } = target;
     this.setState({ [name]: value });
+  };
+
+  handleAddExpense = () => {
+    const { dispatch } = this.props;
+    const { value,
+      description, selectValue, paymentMethod, expenseTag } = this.state;
+    const id = this.lastId;
+    this.lastId += 1;
+    dispatch(saveExpenses({
+      id,
+      value,
+      description,
+      selectValue,
+      paymentMethod,
+      expenseTag,
+    }));
+    this.setState({
+      value: '',
+      description: '',
+    });
   };
 
   render() {
@@ -94,16 +116,19 @@ class WalletForm extends Component {
             </select>
           </label>
         </form>
+        <button
+          onClick={ this.handleAddExpense }
+        >
+          Adicionar despesa
+
+        </button>
       </div>
     );
   }
 }
 
 WalletForm.propTypes = {
-  currencies: PropTypes.arrayOf(PropTypes.shape({
-    value: PropTypes.string,
-    label: PropTypes.string,
-  })),
+  currencies: PropTypes.arrayOf(PropTypes.string),
   dispatch: PropTypes.func.isRequired,
 };
 

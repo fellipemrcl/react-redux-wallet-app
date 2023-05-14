@@ -1,6 +1,7 @@
 export const actionTypes = {
-  SAVE_EMAIL: 'SAVE_EMAIL',
   GET_GURRENCIES: 'GET_GURRENCIES',
+  SAVE_EMAIL: 'SAVE_EMAIL',
+  SAVE_EXPENSES: 'SAVE_EXPENSES',
   REQUEST_STARTED: 'REQUEST_STARTED',
   REQUEST_SUCCESSFUL: 'REQUEST_SUCCESSFUL',
   REQUEST_FAILURE: 'REQUEST_FAILURE',
@@ -14,6 +15,11 @@ export const saveEmail = (email) => ({
 export const getGurrencies = (currencies) => ({
   type: actionTypes.GET_GURRENCIES,
   payload: currencies,
+});
+
+export const saveExpenses = (expense) => ({
+  type: actionTypes.SAVE_EXPENSES,
+  payload: expense,
 });
 
 const requestStarted = () => ({ type: actionTypes.REQUEST_STARTED });
