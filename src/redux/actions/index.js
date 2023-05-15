@@ -5,6 +5,7 @@ export const actionTypes = {
   REQUEST_STARTED: 'REQUEST_STARTED',
   REQUEST_SUCCESSFUL: 'REQUEST_SUCCESSFUL',
   REQUEST_FAILURE: 'REQUEST_FAILURE',
+  FETCH_CURRENCIES: 'FETCH_CURRENCIES',
 };
 
 export const saveEmail = (email) => ({
@@ -22,6 +23,11 @@ export const saveExpenses = (expense) => ({
   payload: expense,
 });
 
+/* export const fetchCurrentCurrencies = (currencies) => ({
+  type: actionTypes.FETCH_CURRENCIES,
+  payload: currencies,
+}); */
+
 const requestStarted = () => ({ type: actionTypes.REQUEST_STARTED });
 
 const requestFailure = (error) => ({
@@ -37,6 +43,17 @@ export const fetchApi = () => async (dispatch) => {
     const currenciesArray = Object.keys(data);
     currenciesArray.splice(1, 1);
     dispatch(getGurrencies(currenciesArray));
+  } catch (error) {
+    dispatch(requestFailure(error));
+  }
+};
+
+export const fetchCurrenciesFromApi = (expense) => async (dispatch) => {
+  try {
+    dispatch(requestStarted());
+    const response = await fetch('https://economia.awesomeapi.com.br/json/all');
+    const data = await response.json();
+    dispatch(saveExpenses({ ...expense, exchangeRates: data }));
   } catch (error) {
     dispatch(requestFailure(error));
   }
