@@ -18,9 +18,9 @@ class Header extends Component {
         </p>
         <p>
           Despesa Total: R$
-          <p data-testid="total-field">
+          <span data-testid="total-field">
             {calc.toFixed(2)}
-          </p>
+          </span>
 
         </p>
         <p
