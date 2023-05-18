@@ -7,6 +7,8 @@ export const actionTypes = {
   REQUEST_FAILURE: 'REQUEST_FAILURE',
   FETCH_CURRENCIES: 'FETCH_CURRENCIES',
   DELETE_EXPENSE: 'DELETE_EXPENSE',
+  UPDATE_EXPENSE: 'UPDATE_EXPENSE',
+  SAVE_UPDATED_EXPENSE: 'SAVE_UPDATED_EXPENSE',
 };
 
 export const saveEmail = (email) => ({
@@ -27,6 +29,16 @@ export const saveExpenses = (expense) => ({
 export const deleteExpense = (id) => ({
   type: actionTypes.DELETE_EXPENSE,
   payload: id,
+});
+
+export const updateExpense = (id) => ({
+  type: actionTypes.UPDATE_EXPENSE,
+  payload: id,
+});
+
+export const saveUpdatedExpense = (expense) => ({
+  type: actionTypes.SAVE_UPDATED_EXPENSE,
+  payload: expense,
 });
 
 const requestStarted = () => ({ type: actionTypes.REQUEST_STARTED });
