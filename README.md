@@ -53,9 +53,9 @@ A aplicação estará disponível em http://localhost:3000.
    
 A estrutura de diretórios do projeto está organizada da seguinte maneira:
 
-src/: Contém o código-fonte da aplicação React.
-public/: Contém arquivos públicos, como o arquivo HTML principal.
-images/: Armazena as imagens usadas na documentação.
+- src/: Contém o código-fonte da aplicação React.
+- public/: Contém arquivos públicos, como o arquivo HTML principal.
+- images/: Armazena as imagens usadas na documentação.
 
 ## **Licença**
 Este projeto é distribuído sob a licença MIT. Consulte o arquivo LICENSE para obter mais detalhes.
