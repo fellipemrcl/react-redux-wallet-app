@@ -24,3 +24,38 @@ O Tailwind CSS permite uma abordagem altamente personalizável para a estilizaç
 Fique à vontade para acompanhar as atualizações no projeto para ver as melhorias na estilização à medida que avançamos no desenvolvimento.
 
 Se você é familiarizado com o Tailwind CSS ou deseja contribuir para a estilização, ficaríamos felizes em receber suas contribuições e sugestões. Junte-se a nós nesta jornada de criação de uma loja online incrível!
+
+## Como Executar o Projeto
+
+## **Clonar o repositório**:
+
+```bash
+   git@github.com:fellipemrcl/react-redux-wallet-app.git
+```
+## **Instalar as dependências**:
+
+Navegue até o diretório do projeto e execute o seguinte comando:
+
+```bash
+npm install
+```
+
+## **Executar a aplicação**:
+
+Execute o seguinte comando para iniciar o servidor de desenvolvimento:
+
+```bash
+npm start
+```
+A aplicação estará disponível em http://localhost:3000.
+
+## **Estrutura do Projeto**
+   
+A estrutura de diretórios do projeto está organizada da seguinte maneira:
+
+src/: Contém o código-fonte da aplicação React.
+public/: Contém arquivos públicos, como o arquivo HTML principal.
+images/: Armazena as imagens usadas na documentação.
+
+## **Licença**
+Este projeto é distribuído sob a licença MIT. Consulte o arquivo LICENSE para obter mais detalhes.
